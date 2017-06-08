@@ -5,10 +5,6 @@ class TweetParser:
     #     pass
 
     def parse(self, tweet):
-        # tokenized_tweets = tweet.split()
-        #
-        # for word in tokenized_tweets:
-        #     re.
         hash_tags = re.findall(r'\#\w*', tweet)
         at_tags = re.findall(r'\@\w*', tweet)
         links = re.findall(r'http[s]?://[a-zA-Z0-9_\-\./]*', tweet)

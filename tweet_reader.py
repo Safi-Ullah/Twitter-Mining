@@ -20,5 +20,4 @@ class TweetReader:
 
         for tweet in public_tweets:
             yield tweet.text
-
         return
