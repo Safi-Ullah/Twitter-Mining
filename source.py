@@ -1,13 +1,16 @@
+# import pdb
 import sys
 import getopt
 from tweet_reader import TweetReader
 from tweet_parser import TweetParser
 
 def get_search_query():
+    # Checking whether command line arguments are given or not
     if len(sys.argv) == 1:
         print ("Compile program as : test.py -s <Search Query>")
         sys.exit(2)
 
+    # Check on whether the arguments given are in the correct format or not
     try:
         opts, args = getopt.getopt(sys.argv[1:],"s:")
     except getopt.GetoptError:
@@ -20,6 +23,7 @@ def get_search_query():
             return arg
 
 if __name__ == "__main__":
+    # pdb.set_trace()
     search_query = get_search_query()
 
     reader = TweetReader()
@@ -28,13 +32,11 @@ if __name__ == "__main__":
 
     parser = TweetParser()
 
-    print ("\n============================================\n")
     for i in range(0, 10):
         tweet = next(tweet_generator)
         if search_query in tweet:
+            print ("\n======================Tweet=======================\n")
             print (tweet)
-            print ("--------------------------------------------")
+            print ("\n----------------------Parsed----------------------\n")
             for tag in parser.parse(tweet):
                 print (tag + "\t")
-
-            print ("\n============================================\n")
