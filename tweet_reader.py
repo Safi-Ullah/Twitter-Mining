@@ -3,10 +3,10 @@ import tweepy
 class TweetReader:
 
     def __init__(self):
-        self.__consumer_key = "os1fm4XImRtiE9fKk9ZbmFp4f"
-        self.__consumer_secret = "zJHb7lgToonbAS67StM1D5bW6SLLT2OVWBm5zIPibXI1EOlnNZ"
-        self.__access_token = "872773211934515200-AVLJYY1JfreNnno9WWg72CDiM1IY6dz"
-        self.__access_token_secret = "OTZGdJDnMFeTjPVY7JR8TwxW4AcxyfJWfshJgRzia7xVI"
+        self.__consumer_key = "Your Consumer Key"
+        self.__consumer_secret = "Your Consumer Secret"
+        self.__access_token = "Your Access Token"
+        self.__access_token_secret = "Your Access Token Secret"
         self.auth = None
         self.api = None
 
